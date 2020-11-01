@@ -12,7 +12,7 @@ abstract class PetStoreViewModel extends State<PetStore>{
   Future<void> initState() {
     super.initState();
     final options = BaseOptions(
-      baseUrl: "http://localhost:1337/"
+      baseUrl: "http://192.168.43.174:1337/"
     );
     dio = Dio(options);
     getPetStoreList();
@@ -30,5 +30,8 @@ abstract class PetStoreViewModel extends State<PetStore>{
         petStores = responseBody.map((e) => PetStoreModel.fromJson(e)).toList();
       }
     }
+    setState(() {
+      
+    });
   }
 }
